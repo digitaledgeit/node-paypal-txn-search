@@ -1,0 +1,24 @@
+{
+  "name": "@digitaledgeit/paypal-txn-search",
+  "version": "0.1.0",
+  "description": "A client for the PayPal classic NVP API.",
+  "keywords": [
+    "paypal",
+    "nvp",
+    "api",
+    "transaction",
+    "search"
+  ],
+  "dependencies": {
+    "@digitaledgeit/paypal": "^0.3.1",
+    "debug": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/digitalegeit/node-paypal-txn-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalegeit/node-paypal-txn-search/issues"
+  },
+  "license": "MIT"
+}
