@@ -2,14 +2,14 @@ var debug   = require('debug')('paypal-txn-search');
 var PayPal  = require('@digitaledgeit/paypal');
 
 /**
- * PayPal transaction gateway
+ * Transaction query
  * @constructor
  * @param   {PayPal|Object} client
  */
-function TransactionSearch(client) {
+function TransactionQuery(client) {
 
-  if (!(this instanceof TransactionSearch)) {
-    return new TransactionSearch(client);
+  if (!(this instanceof TransactionQuery)) {
+    return new TransactionQuery(client);
   }
 
   //create a new instance of the PayPal client with the config
@@ -29,14 +29,14 @@ function TransactionSearch(client) {
  * Search transactions
  * @param   {Object}                    params
  * @param   {function(Error, Object)}   callback
- * @returns {TransactionSearch}
+ * @returns {TransactionQuery}
  */
-TransactionSearch.prototype.search = function(params, callback) {
+TransactionQuery.prototype.search = function(params, callback) {
   var self = this;
 
   debug('STARTDATE: %s ENDDATE: %s', params.STARTDATE, params.ENDDATE);
 
-  this.client.exec('TransactionSearch', params, function(err, list) {
+  this.client.exec('TransactionQuery', params, function(err, list) {
     if (err) return callback(err);
 
     //PayPal gives us the most recent 100 transactions so check if we need to fetch again, for older transactions
@@ -58,4 +58,4 @@ TransactionSearch.prototype.search = function(params, callback) {
   return this;
 };
 
-module.exports = TransactionSearch;
+module.exports = TransactionQuery;
