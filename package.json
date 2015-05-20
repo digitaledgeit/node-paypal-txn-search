@@ -1,6 +1,6 @@
 {
   "name": "@digitaledgeit/paypal-txn-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Transaction search for the PayPal classic NVP API.",
   "keywords": [
     "paypal",

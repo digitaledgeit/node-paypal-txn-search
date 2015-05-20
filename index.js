@@ -36,7 +36,7 @@ TransactionQuery.prototype.search = function(params, callback) {
 
   debug('STARTDATE: %s ENDDATE: %s', params.STARTDATE, params.ENDDATE);
 
-  this.client.exec('TransactionQuery', params, function(err, list) {
+  this.client.exec('TransactionSearch', params, function(err, list) {
     if (err) return callback(err);
 
     //PayPal gives us the most recent 100 transactions so check if we need to fetch again, for older transactions
